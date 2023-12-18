@@ -16,20 +16,21 @@
             </div>
           </div>
         </div>
-        @for (film of programs; track $index) {
+        @for (program of programs; track $index) {
             <div class="card m-2 col-5 " >
                 <img
                   class="card-img-top mt-3 personaje_img"
-                  src="https://image.tmdb.org/t/p/original/{{ film.backdrop_path }}"
+                  src="https://image.tmdb.org/t/p/original/{{ program.backdrop_path }}"
                   alt="Card image cap"
                 />
                 <div class="card-body">
-                  <h5 class="card-title">{{ film.original_title }}</h5>
-                  <p class="card-text text-center"></p>
-                  <p><b>Description:</b>{{film.overview}}</p>
-                  <p><b>Puntuation :</b>{{film.vote_average}}</p>
+                  <h5 class="card-title">{{ program.original_title }}</h5>
+                  <p class="card-text text-center">{{program.original_title}}</p>
+                  <h2>{{program.original_title}}</h2>
+                  <p><b>Description:</b>{{program.overview}}</p>
+                  <p><b>Puntuation :</b>{{program.vote_average}}</p>
                   <div class="text-center">
-                    <a [routerLink]="['/tvprogram', film.id]" class="btn btn-info">see more</a>
+                    <a [routerLink]="['/tvprogram', program.id]" class="btn btn-info">see more</a>
                 </div>
                 </div>
               </div>

@@ -30,7 +30,7 @@ export class HttpserviceService {
   }
 
   show_program(id_film :string){
-    let url: string = 'https://api.themoviedb.org/3/movie/'+id_film+'?api_key='+APIKEY
+    let url: string = 'https://api.themoviedb.org/3/tv/'+id_film+'?api_key='+APIKEY
     return this.http.get<any[]>(url);
   }
 

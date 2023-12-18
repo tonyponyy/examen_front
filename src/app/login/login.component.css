@@ -1,0 +1,27 @@
+.card {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    color: #333; /* Cambia el color del texto según tu preferencia */
+    text-align: center;
+    padding: 20px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  body{
+    background-color: linear-gradient(to bottom, #87CEEB, #FFFFFF);
+  }
+
+  .card {
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+  }

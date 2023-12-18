@@ -1,0 +1,37 @@
+<app-navbar>
+    @if ( loaded) {
+
+        <div class="text-center">
+          <img
+            class="card-img-top img-per"
+            src="https://image.tmdb.org/t/p/original/{{ program.backdrop_path }}"
+            
+          />
+        </div>
+        <div class="card-body text-center">
+          <h5 title="{{ program.original_name}}" class="card-title">
+            {{ program.original_name}}
+          </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <p><strong>Overview:</strong> {{ program.overview }}</p>
+          </li>
+          <li class="list-group-item">
+            <p> <b>Popularity:</b> {{program.popularity}}</p>
+          </li>
+          <li class="list-group-item">
+            <p><b>Tagline: </b>{{ program.tagline }}</p>
+          </li>
+          <li class="list-group-item">
+            <p>Languages:</p>
+            @for (lan of program.spoken_languages; track $index) {
+            <p>{{ lan.english_name}}</p>
+          }
+        </li>
+        </ul>
+        }@else {
+        <p>loading</p>
+        }
+        
+    </app-navbar>

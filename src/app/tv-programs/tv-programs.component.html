@@ -1,0 +1,41 @@
+<app-navbar>
+    <div class="d-flex me-1 row" role="search">
+    
+        <div class="row justify-content-end">
+    
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            
+            <div class="d-flex">
+              <input
+                #search_input
+                class="form-control flex-grow-1 mr-2"
+                type="text"
+                placeholder="Buscar"
+              />
+              <button (click)="search(search_input.value)" class="btn btn-primary mt-1">Find</button>
+            </div>
+          </div>
+        </div>
+        @for (film of programs; track $index) {
+            <div class="card m-2 col-5 " >
+                <img
+                  class="card-img-top mt-3 personaje_img"
+                  src="https://image.tmdb.org/t/p/original/{{ film.backdrop_path }}"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{ film.original_title }}</h5>
+                  <p class="card-text text-center"></p>
+                  <p><b>Description:</b>{{film.overview}}</p>
+                  <p><b>Puntuation :</b>{{film.vote_average}}</p>
+                  <div class="text-center">
+                    <a [routerLink]="['/tvprogram', film.id]" class="btn btn-info">see more</a>
+                </div>
+                </div>
+              </div>
+
+
+
+        }
+      </div>
+</app-navbar>
